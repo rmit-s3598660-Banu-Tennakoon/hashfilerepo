@@ -4,12 +4,6 @@ import java.io.*;
 import java.nio.ByteBuffer;
 import java.util.Arrays;
 
-/**
- * This class looks for a record in a heap file using the business name as a hash index.
- * @param business name of record searched.
- * @param page size of the heapfile.
- * @return hash file built on the specified heapfile.
- */
 
 public class hashquery implements hashimpl{
 
@@ -93,15 +87,7 @@ public class hashquery implements hashimpl{
 			}			
 			rafhash.close();	
 			rafheap.close();				
-		} catch (UnsupportedEncodingException e1) {
-			e1.printStackTrace();
-		} catch (FileNotFoundException fnf) {
-		    System.err.println("Heap file / Hash file is missing");
-		} catch (EOFException eof) {
-		    System.err.println("Reached end of hash file. Business name could not be found.");			
-		} catch (IOException e) {
-		    System.err.println("Please a valid business name and the page number as arguments.");
-		}	
+		
 	}
 
 	public byte[] getNameFromRecord(byte[] rec) {
@@ -120,9 +106,6 @@ public class hashquery implements hashimpl{
 		return no_of_rows_in_hash/BUCKETS;
 	}
 	
-	public int getKey(byte[] bname) {
-		return Math.abs(Arrays.hashCode(bname) % BUCKETS);
-	}
 	
 	public int byteToInt(byte[] b) {
 		return ByteBuffer.wrap(b).getInt();

@@ -14,10 +14,6 @@ public interface hashimpl
 	//Heap
 	public static final int RECORD_SIZE = 297;
 	public static final int INT_SIZE = 4;
-	public static final int RID_SIZE = INT_SIZE;
-	public static final int REGISTER_NAME_SIZE = 14;
-	public static final int BN_NAME_SIZE = 200;
-	public static final int BN_NAME_OFFSET = RID_SIZE + REGISTER_NAME_SIZE;
 	public static final int BN_STATUS_OFFSET = RID_SIZE + REGISTER_NAME_SIZE + BN_NAME_SIZE;
 	
 	//Hash

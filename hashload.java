@@ -33,7 +33,7 @@ public class hashload implements hashimpl{
 	public void readArguments(String args[]) {
 		try {
 			readHeap(Integer.parseInt(args[0]));
-		} catch (NumberFormatException e) {
+		} 
 		    System.err.println("Please enter the page size of the heap file.");
 		}
 	}

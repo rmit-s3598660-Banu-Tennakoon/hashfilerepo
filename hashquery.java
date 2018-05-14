@@ -53,18 +53,7 @@ public class hashquery implements hashimpl{
 			key = ByteBuffer.allocate(INT_SIZE).putInt(getKey(bnametosearch)).array();
 			bkeyToSearch = ByteBuffer.wrap(key).getInt();
 			
-			long seekpos =  moveToBucket(bkeyToSearch);
-			System.out.println("BUCKET SIZE: " + BUCKET_SIZE);
-			boolean search = true;
-			rafhash.seek(rafhash.getFilePointer()+seekpos+1);
-			
-			int bucket_position = 0;
-			
-			while (search) {
-				bucket_position++;
-				int rid = rafhash.readInt();
-				int pagenum = rafhash.readInt();			
-				rafhash.readInt();
+			long seekpos =  moveToBucket(bkeyToSearch);ash.readInt();
 				int nextpos = pagenum * pagesize + RECORD_SIZE * rid;
 				rafheap.seek(nextpos);
 				byte[] rec = new byte[RECORD_SIZE];

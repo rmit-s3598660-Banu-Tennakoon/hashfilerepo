@@ -21,8 +21,6 @@ public interface hashimpl
 	public static final int KEY_SIZE = INT_SIZE;
 	public static final int EMPTY_HASH_INDICATOR = 1; //Indicates whether or not hash index row is empty
 	public static final int HASH_INDEX_SIZE = EMPTY_HASH_INDICATOR + RID_SIZE + PAGE_SIZE + KEY_SIZE;
-	public static final int BUCKETS = 553279; //Prime number
-	public static final double EXPECTED_OCCUPANCY = 0.7;
 	
    public void readArguments(String args[]);
    

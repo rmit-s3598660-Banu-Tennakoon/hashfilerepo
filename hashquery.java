@@ -14,7 +14,7 @@ import java.util.Arrays;
 public class hashquery implements hashimpl{
 
 	public static int BUCKET_SIZE;
-	public File hashfile;
+
 	public File heapfile;
 	
 	public static void main(String[] args) {
@@ -48,9 +48,7 @@ public class hashquery implements hashimpl{
 		BUCKET_SIZE = calculateBucketSize();
 		
 		try {				
-			RandomAccessFile rafhash = new RandomAccessFile(hashfile, "r");			
-			RandomAccessFile rafheap = new RandomAccessFile(heapfile, "r");			
-		
+	
 			byte[] bname;
 			byte[] key;
 			byte[] bnametosearch = new byte[BN_NAME_SIZE];

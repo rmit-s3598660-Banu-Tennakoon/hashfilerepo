@@ -1,3 +1,9 @@
+commit f14027a6ef9f6eb5c06edd7247f970f7d6b48968
+Author: rmit-s3598660-Banu-Tennakoon <s3598660@student.rmit.edu.au>
+Date:   Mon May 14 22:13:58 2018 +1000
+
+    Querying hash file. Set up variables and method
+
 commit 6bb360f06f49d450e6ee739fcad2e37969f18b60
 Author: rmit-s3598660-Banu-Tennakoon <s3598660@student.rmit.edu.au>
 Date:   Mon May 14 21:55:48 2018 +1000

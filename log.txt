@@ -1,0 +1,23 @@
+commit 6bb360f06f49d450e6ee739fcad2e37969f18b60
+Author: rmit-s3598660-Banu-Tennakoon <s3598660@student.rmit.edu.au>
+Date:   Mon May 14 21:55:48 2018 +1000
+
+    setup the data file
+
+commit b59dbcd3798db8fd71e5674b8c1dc8d86a925afd
+Author: rmit-s3598660-Banu-Tennakoon <s3598660@student.rmit.edu.au>
+Date:   Mon May 14 21:18:21 2018 +1000
+
+    Refine the methods. Fix coding lingo and eliminate duplicate code.
+
+commit db23767fd0b8a9bc4a578649478e4bd7b9c9c510
+Author: rmit-s3598660-Banu-Tennakoon <s3598660@student.rmit.edu.au>
+Date:   Mon May 14 20:55:27 2018 +1000
+
+    Setup of hash interface with fixed data. Setup abstract methods.
+
+commit db40ca0692f55c9241dc82542f3906e0f3f64411
+Author: rmit-s3598660-Banu-Tennakoon <s3598660@student.rmit.edu.au>
+Date:   Mon May 14 21:27:39 2018 +1000
+
+    Initial commit

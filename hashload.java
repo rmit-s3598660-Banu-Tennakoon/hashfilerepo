@@ -33,7 +33,7 @@ public class hashload implements hashimpl{
 	public void readArguments(String args[]) {
 		try {
 			readHeap(Integer.parseInt(args[0]));
-		} 
+		} catch (NumberFormatException e) {
 		    System.err.println("Please enter the page size of the heap file.");
 		}
 	}
@@ -133,6 +133,11 @@ public class hashload implements hashimpl{
 				brid = ByteBuffer.allocate(INT_SIZE).putInt(-1).array(); //RID initialised as -1
 				bpagenum = ByteBuffer.allocate(INT_SIZE).putInt(-1).array(); //PAGENUMBER initialised as -1
 				bkey = ByteBuffer.allocate(INT_SIZE).putInt(i).array(); //Hash Key corresponding to bucket no.
+
+				hash_row[0] = 0;
+				System.arraycopy(brid, 0, hash_row, 1, brid.length);
+				System.arraycopy(bpagenum, 0, hash_row, 5, bpagenum.length);
+				System.arraycopy(bkey, 0, hash_row, 9, bkey.length);
 				
 				try {
 					fos.write(hash_row);
@@ -167,7 +172,13 @@ public class hashload implements hashimpl{
 					writeOverflowBuckets(hash);
 					searchBucket = false;
 				}
-			
+				if (raf.readByte() == 0) {	//Reads the EMPTY_HASH_INDICATOR to see if row is empty
+					raf.seek(raf.getFilePointer()-1);
+					raf.writeByte(1); //Mark EMPTY_HASH_INDICATOR as full
+					hash_entries++;
+					raf.write(brid);
+					raf.write(bpage);
+					searchBucket = false;
 				} else {
 					raf.seek(raf.getFilePointer() + RID_SIZE + PAGE_SIZE + KEY_SIZE);
 				}
